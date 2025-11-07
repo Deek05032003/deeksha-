@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:login_page/login_pro/commun_widget.dart';
+import 'commun_widget.dart';
 
-class ragis extends StatelessWidget {
+class ragis extends StatefulWidget {
   ragis({super.key});
 
+  @override
+  State<ragis> createState() => _ragisState();
+}
+
+class _ragisState extends State<ragis> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   void signbutton() {
     if (_formKey.currentState!.validate()) {}
+    setState(() {});
   }
 
   @override
@@ -29,6 +37,7 @@ class ragis extends StatelessWidget {
             key: _formKey,
             child: Column(
               children: [
+                Center(child: range()),
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
