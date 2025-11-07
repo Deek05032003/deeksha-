@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'ragistration_page.dart';
+import 'commun_widget.dart';
 
-class log extends StatelessWidget {
+class log extends StatefulWidget {
+  @override
+  State<log> createState() => _logState();
+}
+
+class _logState extends State<log> {
   bool? isChecked = false;
 
   @override
@@ -41,10 +47,14 @@ class log extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
+                      padding: const EdgeInsets.only(top: 50),
+                      child: range(),
+                    ),
+                    Padding(
                       padding: const EdgeInsets.only(
                         left: 5,
                         right: 10,
-                        top: 100,
+                        top: 50,
                         bottom: 20,
                       ),
                       child: Text(
@@ -174,10 +184,8 @@ class log extends StatelessWidget {
                               value: isChecked,
                               tristate: true,
                               onChanged: (bool? newBool) {
-                                //((){
                                 isChecked = newBool;
-                                // },
-                                // );
+                                setState(() {});
                               },
                             ),
 

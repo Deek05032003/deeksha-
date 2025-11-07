@@ -38,3 +38,32 @@ class commun extends StatelessWidget {
     );
   }
 }
+
+class range extends StatefulWidget {
+  @override
+  State<range> createState() => _rangeState();
+}
+
+class _rangeState extends State<range> {
+  RangeValues values = RangeValues(1, 3);
+
+  @override
+  Widget build(BuildContext context) {
+    RangeLabels labels = RangeLabels(
+      values.start.toString(),
+      values.end.toString(),
+    );
+    return RangeSlider(
+      values: values,
+      labels: labels,
+      min: 0,
+      max: 3,
+      activeColor: Colors.blueAccent,
+      inactiveColor: Colors.blueAccent.shade100,
+      onChanged: (newvalue) {
+        values = newvalue;
+        setState(() {});
+      },
+    );
+  }
+}
