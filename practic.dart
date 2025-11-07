@@ -27,26 +27,43 @@ class practice extends StatelessWidget {
             end: AlignmentGeometry.bottomRight,
           ),
         ),
-        child: Wrap(
-          direction: Axis.vertical,
-          alignment: WrapAlignment.center,
-          spacing: 20,
-          runSpacing: 30,
-          children: [
-            stack_widget(text: 'IMAGE OF LAPTOP'),
-            cont(img: "assets/image/lap1.jpg"),
-            cont(img: "assets/image/lap9.jpg"),
-            cont(img: "assets/image/lap3.jpg"),
-            cont(img: "assets/image/lap4.jpg"),
-            cont(img: "assets/image/lap6.jpg"),
-            cont(img: "assets/image/lap2.jpg"),
-            cont(img: "assets/image/lap7.jpg"),
-            cont(img: "assets/image/lap8.jpg"),
-            TextButton(onPressed: () {
-              Navigator.pushNamed(context, 'about_lapi');
-            }, child: Text('About laptop')),
-          ],
-        ),
+        child:
+            //children: [
+            ListWheelScrollView(
+              itemExtent: 200,
+              children: [
+                stack_widget(
+                  text: 'IMAGE OF LAPTOP',
+                  style: TextStyle(
+                    fontSize: 38,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Italic',
+                  ),
+                ),
+
+                padg(),cont(img: "assets/image/lap1.jpg"),
+                padg(),cont(img: "assets/image/lap9.jpg"),
+                padg(),cont(img: "assets/image/lap3.jpg"),
+                padg(),cont(img: "assets/image/lap4.jpg"),
+                padg(),cont(img: "assets/image/lap6.jpg"),
+                padg(),cont(img: "assets/image/lap2.jpg"),
+                padg(),cont(img: "assets/image/lap7.jpg"),
+                padg(),cont(img: "assets/image/lap8.jpg"),
+                padg(),TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'about_lapi');
+                  },
+                  child: Text(
+                    'About laptop',
+                    style: TextStyle(
+                      fontSize: 38,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ),
+              ],
+            ),
       ),
     );
   }
